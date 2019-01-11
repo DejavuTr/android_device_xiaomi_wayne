@@ -24,8 +24,16 @@
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/wayne/device.mk)
 
-# Inherit from Havoc custom product configuration
-$(call inherit-product, vendor/havoc/config/common.mk)
+# Inherit Carbon GSM telephony parts
+$(call inherit-product, vendor/carbon/config/gsm.mk)
+
+# Inherit Carbon product configuration
+$(call inherit-product, vendor/carbon/config/common.mk)
+
+# CarbonRom Maintainer
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.carbon.maintainer="Rcstar6696"
+
 TARGET_VENDOR_PRODUCT_NAME := wayne
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
@@ -37,6 +45,6 @@ BUILD_FINGERPRINT := xiaomi/wayne/wayne:8.1.0/OPM1.171019.011/V9.5.11.0.ODCCNFA:
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_PLATFORM := SDM660
-PRODUCT_NAME := havoc_wayne
+PRODUCT_NAME := carbon_wayne
 PRODUCT_DEVICE := wayne
-PRODUCT_MODEL := MI 6X
+PRODUCT_MODEL := MI 6X (CarbonROM)
